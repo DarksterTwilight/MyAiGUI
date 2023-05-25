@@ -1,0 +1,85 @@
+<ChatScreen>
+    aiText: aiText
+    humanText: humanText
+    prompt:prompt
+
+    BoxLayout:
+        orientation:"vertical"
+        size: root.width, root.height
+        id: box_layout
+        spacing: 10
+        padding: 0
+
+        Label:
+            text:"Human Text"
+            id: humanText
+            pos_hint:{'center_x': 0.65}
+            size_hint:(None,None)
+            width: 500
+            height: self.texture_size[1]
+            test_size: self.width, None
+            valing: 'middle'
+            haling: 'center'
+            canvas.before:
+                Color:
+                    rgba: 0.8, 0.8, 0.8, 1 # Grey Color
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            color: 0, 0, 0, 1 #Black text color
+
+        Label:
+            text:"Ai text"
+            id: aiText
+            pos_hint:{'center_x': 0.35}
+            size_hint:(None,None)
+            width:500
+            height: self.texture_size[1]
+            test_size: self.width, None
+            valing: 'middle'
+            haling: 'center'
+            canvas.before:
+                Color:
+                    rgba: 0.8, 0.8, 0.8, 1 # Grey Color
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            color: 0, 0, 0, 1 #Black text color
+
+
+        BoxLayout:
+
+            orientation:"horizontal"
+            size: root.width, 80
+
+            spacing: 0
+            padding: 0
+
+            TextInput:
+                id: prompt
+                size_hint:(None,None)
+                width: root.width*0.70
+                height: max(50, self.minimum_height)
+                multiline: True
+                on_text: self.height = max(50, self.minimum_height)
+
+            Button:
+
+                text:"Send"
+                on_press: root.promtSend()
+                background_normal:''
+                background_color:(0,1,0,1)
+                size_hint:(None,None)
+                width: root.width*0.15
+                height: 50
+
+            Button:
+
+                text:"Back"
+                on_press: root.backToHome()
+                background_normal:''
+                background_color:(1,0,0,1)
+                size_hint:(None,None)
+                width: root.width*0.15
+                height: 50
+

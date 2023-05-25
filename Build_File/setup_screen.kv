@@ -1,0 +1,198 @@
+<SetupScreen>
+
+
+    BoxLayout:
+        orientation:"vertical"
+        size: root.width, root.height
+        pos_hint:{'center_x': 0.5}
+        id: box_layout
+        spacing: 25
+        padding: 10
+
+        BoxLayout:
+
+            orientation:"horizontal"
+            size: root.width, 80
+            pos_hint:{'center_x': 0.5}
+
+            spacing: 15
+            padding: 15
+
+            TextInput:
+                id: openai_api
+                text: "OpenAi Api Key"
+                size_hint:(None,None)
+                width: root.width*0.55
+                height: max(50, self.minimum_height)
+                multiline: True
+                on_text: self.height = max(50, self.minimum_height)
+
+            Button:
+
+                text:"Save"
+                on_press: root.save_openai()
+                background_normal:''
+                background_color:(0,1,0,1)
+                size_hint:(None,None)
+                width: root.width*0.10
+                height: 50
+
+            Button:
+
+                text:"Cance"
+                on_press: root.cancel_openai()
+                background_normal:''
+                background_color:(1,0,0,1)
+                size_hint:(None,None)
+                width: root.width*0.10
+                height: 50
+
+        BoxLayout:
+
+            orientation:"horizontal"
+            size: root.width, 80
+            pos_hint:{'center_x': 0.5}
+            spacing: 15
+            padding: 15
+
+            TextInput:
+                id: pinecone_api
+                text:"Pinecone API Key"
+                size_hint:(None,None)
+                width: root.width*0.55
+                height: max(50, self.minimum_height)
+                multiline: True
+                on_text: self.height = max(50, self.minimum_height)
+
+            Button:
+
+                text:"Save"
+                on_press: root.save_pinecone_api()
+                background_normal:''
+                background_color:(0,1,0,1)
+                size_hint:(None,None)
+                width: root.width*0.10
+                height: 50
+
+            Button:
+
+                text:"Cance"
+                on_press: root.cancel_pinecone_api()
+                background_normal:''
+                background_color:(1,0,0,1)
+                size_hint:(None,None)
+                width: root.width*0.10
+                height: 50
+
+        BoxLayout:
+
+            orientation:"horizontal"
+            size: root.width, 80
+            pos_hint:{'center_x': 0.5}
+            spacing: 15
+            padding: 15
+
+            TextInput:
+                id: pinecone_env
+                text:"Pinecone Env key"
+                size_hint:(None,None)
+                width: root.width*0.55
+                height: max(50, self.minimum_height)
+                multiline: True
+                on_text: self.height = max(50, self.minimum_height)
+
+            Button:
+
+                text:"Save"
+                on_press: root.save_pinecone_env()
+                background_normal:''
+                background_color:(0,1,0,1)
+                size_hint:(None,None)
+                width: root.width*0.10
+                height: 50
+
+            Button:
+
+                text:"Cance"
+                on_press: root.cancel_pinecone_env()
+                background_normal:''
+                background_color:(1,0,0,1)
+                size_hint:(None,None)
+                width: root.width*0.10
+                height: 50
+
+
+        BoxLayout:
+
+            orientation:"horizontal"
+            size: root.width, 80
+            pos_hint:{'center_x': 0.5}
+            spacing: 15
+            padding: 15
+
+            TextInput:
+                id: index_name
+                text:"Index Name"
+                size_hint:(None,None)
+                width: root.width*0.55
+                height: max(50, self.minimum_height)
+                multiline: True
+                on_text: self.height = max(50, self.minimum_height)
+
+            Button:
+
+                text:"Save"
+                on_press: root.save_index_name()
+                background_normal:''
+                background_color:(0,1,0,1)
+                size_hint:(None,None)
+                width: root.width*0.10
+                height: 50
+
+            Button:
+
+                text:"Cance"
+                on_press: root.cancel_index_name()
+                background_normal:''
+                background_color:(1,0,0,1)
+                size_hint:(None,None)
+                width: root.width*0.10
+                height: 50
+
+        BoxLayout:
+            orientation:"horizontal"
+            size: root.width, 80
+            pos_hint:{'center_x': 0.5}
+            spacing: 15
+            padding: 15
+
+            Button:
+
+                text:"Save All"
+                on_press: root.save_all()
+                background_normal:''
+                background_color:(0,1,0,1)
+                size_hint:(None,None)
+                width: root.width*0.10
+                height: 50
+
+            Button:
+
+                text:"Cance All"
+                on_press: root.cancel_all()
+                background_normal:''
+                background_color:(1,0,0,1)
+                size_hint:(None,None)
+                width: root.width*0.10
+                height: 50
+
+            Button:
+
+                text:"Back"
+                on_press: root.backToHome()
+                background_normal:''
+                background_color:(1,0,0,1)
+                size_hint:(None,None)
+                width: root.width*0.10
+                height: 50
+

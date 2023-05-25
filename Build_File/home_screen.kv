@@ -1,0 +1,45 @@
+
+<HomeScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 25
+        spacing: 25
+        size: root.width, root.height
+
+        Label:
+            text:'WELCOME to Your Ai'
+            font_size:32
+        Label:
+            text:'This is a solo project and can have bugs..\n Please support your community for further improvement \n for furrther info you can see me github page: \n{Link}'
+            font_size:15
+            pos_hint:{'center_x': 0.5}
+            size: root.width, 150
+
+
+        Button:
+            text:'Setup.....'
+            on_press: root.aiSetup()
+            pos_hint:{'center_x': 0.5}
+            size_hint:(None,None)
+            width:500
+
+        Button:
+            text:'AI Psychologist'
+            on_press: root.aiPsychologist()
+            pos_hint:{'center_x': 0.5}
+            size_hint:(None,None)
+            width:500
+
+        Button:
+            text:'AI Personal Assistant'
+            on_press: root.aiPersonalAssistant()
+            pos_hint:{'center_x': 0.5}
+            size_hint:(None,None)
+            width:500
+
+        Button:
+            text:'AI Book Analyist'
+            on_press: root.aiBookAnalyist()
+            pos_hint:{'center_x': 0.5}
+            size_hint:(None,None)
+            width:500

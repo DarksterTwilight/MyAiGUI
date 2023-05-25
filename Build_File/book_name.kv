@@ -1,0 +1,37 @@
+<BookName>:
+    BoxLayout:
+        orientation:"horizontal"
+        size: root.width, root.height
+        pos_hint:{'center_x': 0.5}
+
+        spacing: 15
+        padding: 15
+
+        TextInput:
+            id: bookname
+            text: "Book Name?(with extension .pdf)"
+            size_hint:(None,None)
+            width: root.width*0.55
+            height: max(50, self.minimum_height)
+            multiline: True
+            on_text: self.height = max(50, self.minimum_height)
+
+        Button:
+
+            text:"OK!"
+            on_press: root.book_select()
+            background_normal:''
+            background_color:(0,1,0,1)
+            size_hint:(None,None)
+            width: root.width*0.10
+            height: 50
+
+        Button:
+
+            text:"Back"
+            on_press: root.backToHome()
+            background_normal:''
+            background_color:(1,0,0,1)
+            size_hint:(None,None)
+            width: root.width*0.10
+            height: 50
